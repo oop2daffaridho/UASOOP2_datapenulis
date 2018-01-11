@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Daftar Penulis</title>
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/pnls-controller.js"></script>
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+    
+    </head>
+    <body ng-app="PnlsApp" class="container">
+        
+        <div class="jumbotron">
+            <h1>Daftar Penulis</h1>
+            
+        </div>
+        <div class="well" ng-controller="PnlsController">
+        <div class="row">
+        <div class="col-md-6 text-left">
+            <a href="/tambah" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus-sign"></span> Tambah Data</a>
+        </div>
+        <div class="col-md-6 text-right">
+        <button class="btn btn-danger2" ng-click="keluar()"><span class="glyphicon glyphicon-log-out"></span> Keluar</button>
+        
+        </div>
+        </div><br/> <br/>
+            <table class="table table-bordered table-striped table-hovered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAMA PENULIS</th>
+                        <th>JUDUL BUKU</th>
+                        <th width="200px">AKSI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="pnls in daftarPnls">
+                        <td>{{ pnls.id }}</td>
+                        <td>{{ pnls.nama }}</td>
+                        <td>{{ pnls.judul_buku }}</td>
+                        <td>
+                        <button class="btn btn-warning" ng-click="ubah(pnls)"><span class="glyphicon glyphicon-edit"></span> Ubah</button>
+                        <button class="btn btn-danger" ng-click="hapus(pnls)"><span class="glyphicon glyphicon-trash"></span> Hapus</button></td>
+                        
+                    </tr>
+                </tbody>
+                
+            </table>
+            
+        </div>
+        <script src="/bootstrap/js/jquery-1.11.3.min.js"></script>
+        
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+    
+
+
+            
+
+    </body>
+</html>
